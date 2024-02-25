@@ -21,4 +21,6 @@
 (kill-buffer "*scratch*")
 (setq initial-scratch-message "")
 (setq inhibit-startup-screen t)
+
+;;for terminal mode
 ;(set-face-foreground 'minibuffer-prompt "green")
