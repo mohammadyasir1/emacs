@@ -10,6 +10,8 @@
 (menu-bar-mode -1) 
 
 (ac-config-default)
+
+;;for terminal mode
 (setq linum-format "%d ")
 
 
