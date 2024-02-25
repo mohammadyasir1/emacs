@@ -7,6 +7,7 @@
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
 (package-initialize)
 
+;;for terminal mode
 (menu-bar-mode -1) 
 
 (ac-config-default)
