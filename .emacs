@@ -21,3 +21,4 @@
 (setq inhibit-startup-screen t)
 (menu-bar-mode -1) 
 (setq linum-format "%d ")
+(setq compile-command "")
