@@ -1,14 +1,28 @@
-(require 'package)
+;;0*****
+;;required
+;;reference --- https://tkf.github.io/emacs-jedi/latest/#configuration
+;;pip install virtualenv
 
-;; If you want to use last tagged version
-(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
-(package-initialize)
+;;1*****
+(add-to-list 'load-path (expand-file-name "el-get/el-get" user-emacs-directory))
+
+(unless (require 'el-get nil 'noerror)
+  (require 'package)
+  (add-to-list 'package-archives
+               '("melpa" . "http://melpa.org/packages/"))
+  (package-refresh-contents)
+  (package-initialize)
+  (package-install 'el-get)
+  (require 'el-get))
+
+(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
+(el-get 'sync)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (auto-complete))))
+ '(package-selected-packages '(el-get)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -16,8 +30,12 @@
  ;; If there is more than one, they won't work right.
  )
 
-(ac-config-default)
-(setq frame-background-mode 'dark)
+;;2*****
+;; Standard Jedi.el setting
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)
+
+;;3*****
 (setq inhibit-startup-screen t)
 (menu-bar-mode -1) 
 (setq linum-format "%d ")
