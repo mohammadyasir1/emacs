@@ -1,9 +1,11 @@
 ;;0*****
 ;;required
-;;reference --- https://tkf.github.io/emacs-jedi/latest/#configuration
-;;pip install virtualenv
+;;pip virtualenv
+;;git
+
 
 ;;1*****
+
 (add-to-list 'load-path (expand-file-name "el-get/el-get" user-emacs-directory))
 
 (unless (require 'el-get nil 'noerror)
@@ -40,3 +42,4 @@
 (menu-bar-mode -1) 
 (setq linum-format "%d ")
 (setq compile-command "")
+(setq frame-background-mode 'dark)
